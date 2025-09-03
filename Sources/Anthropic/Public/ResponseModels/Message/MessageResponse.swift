@@ -95,6 +95,12 @@ public struct MessageResponse: Decodable {
       public let content: ToolResultContent
       public let isError: Bool?
       public let toolUseId: String?
+
+      private enum CodingKeys: String, CodingKey {
+        case content
+        case toolUseId = "tool_use_id"
+        case isError = "is_error"
+      }
     }
     
     public struct WebSearchToolResult: Codable {
